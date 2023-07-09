@@ -9,7 +9,7 @@
 
 #
 
-## 프로젝트 생성 & 불필요 파일 제거
+### 프로젝트 생성 & 불필요 파일 제거
 
 ```
 root@8aece4bfc5fa:/home# nest new
@@ -33,7 +33,7 @@ root@8aece4bfc5fa:/home# nest new
 export class AppModule {}
 ```
 
-## 패키지 설치
+### 패키지 설치
 
 - typeorm 패키지 설치
 
@@ -49,7 +49,7 @@ yarn add @nestjs/config
 npm install @nestjs/config
 ```
 
-## .env
+### .env
 
 - 이 파일을 프로젝트 root 에 위치시키도록 한다.
 - 정보는 아래를 참고하고 자신에게 맞는 정보로 수정.
@@ -62,7 +62,7 @@ MYSQL_PASSWORD=1234
 MYSQL_DATABASE=tutorial
 ```
 
-## AppModule 에 ConfigModule 추가
+### AppModule 에 ConfigModule 추가
 
 - 아래 예시처럼 설정하면 .env 파일에 추가한 값들을 ConfigService를 통해 애플리케이션 전체에서 사용할 수 있게 된다.
 - 이 tutorial은 typeorm 관련내용이기 때문에 자세히 다루지 않겠다.
@@ -77,7 +77,7 @@ MYSQL_DATABASE=tutorial
 })
 export class AppModule {}
 ```
-
+#
 ## Database Module
 
 - synchronize 옵션은 프로덕션 환경에서는 권장되지 않는다. 이 tutorial 에서는 체험을 위해 true 로 사용하였다.
@@ -190,7 +190,7 @@ export class CreateProductDto {
 
 ## [잠깐] 속성명 컨벤션에 대해서
 
-- 사실, JavaScript와 TypeScript에서 변수와 속성 이름을 작성하는 데 사용되는 네이밍 컨벤션은 camelCase 가 관례이다.
+- 사실, JavaScript와 TypeScript에서 변수와 속성 이름은 camelCase 가 관례이다.
 - 그러나 개개인마다 가독성을 느끼는 편차가 다르고, 프로젝트 팀의 네이밍 규칙이나 조직의 가이드라인에 따라 다른 네이밍 스타일이 있다.
 - 그리고 엔티티 클래스의 속성명은 데이터베이스 테이블의 컬럼 이름과 일치해야하는 문제가 발생한다.
 - 대소문자를 구분하지 않는 파일 시스템 데이터베이스에서는 소문자와 언더스코어(\_)를 사용하여 컬럼 이름을 작성하기 때문에 일부 설정 변경이 필요하다.
