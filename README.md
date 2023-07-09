@@ -91,7 +91,7 @@ export class AppModule {}
 ```javascript
 @Module({
   imports: [
-    // 모듈 설정시 외부에서 설정을 가져올땐 forRootAsync 를 사용하며, 직접적으로 선언하는 경우엔 forRoot() 로 사용한다.
+    // 모듈 설정시 외부에서 설정을 가져올땐 forRootAsync() 를 사용하며, 직접적으로 선언하는 경우엔 forRoot() 로 사용한다.
     TypeOrmModule.forRootAsync({
       useFactory: async (configService: ConfigService) => ({
         type: 'mysql',
