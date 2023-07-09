@@ -897,7 +897,7 @@ export class ProductRepository extends Repository<Product> {
 ```
 
 ## migration
-
+- 모든 상품 가격을 조작하는 마이그레이션
 ### 필요 패키지 설치
 
 - 명령어로 마이그래이션을 실행할때, 외부에서 .env 로드하기 위한 패키지 설치
