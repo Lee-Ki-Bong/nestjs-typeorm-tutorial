@@ -101,7 +101,7 @@ export class AppModule {}
         username: await configService.getOrThrow('MYSQL_USERNAME'),
         password: await configService.getOrThrow('MYSQL_PASSWORD'),
         autoLoadEntities: true, // 이 옵션을 true 로 줌으로서, 모델이 어디에 있는지 수동으로 알릴 필요가 없음.
-        synchronize: true, // TypeORM은 애플리케이션 실행 시 엔티티들을 확인하고 변경사항을 감지하여 수정함.
+        synchronize: true, // TypeORM은 애플리케이션 실행 시 엔티티들을 확인하고 변경사항을 감지하여 DB 반영함.
         logging: true, // typeorm 이 실행하고 있는 쿼리를 로깅할지 여부
       }),
       inject: [ConfigService], // 위 useFactory 에 의존성 주입을 위해 inject 를 선언한다.
