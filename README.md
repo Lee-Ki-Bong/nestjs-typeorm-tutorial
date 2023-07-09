@@ -201,7 +201,7 @@ export class CreateProductDto {
 ## TableNamingStrategy
 
 - 위 에서 이야기했던 속성명 컨벤션문제를 typeorm 에서 제공하는 NamingStrategyInterface 로 도움 받을 수 있다.
-- 이 tutorial 에서는 테이블명이 될 엔티티 클래스명을 snakeCase 로 변경하고 뒤에 '\_tb' 이 붙도록 추가해보았다.
+- 이 tutorial 에서는 테이블명이 될 엔티티 PascalCase 형태의 클래스명을 snakeCase 로 변경하고 뒤에 '\_tb' 이 붙도록 추가해보았다.
 
 ```javascript
 // src/table-naming.strategy.ts
