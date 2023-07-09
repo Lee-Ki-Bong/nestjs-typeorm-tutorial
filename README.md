@@ -766,8 +766,9 @@ export class UpdateProductTagDto extends PartialType(CreateProductTagDto) {
         HttpStatus.BAD_REQUEST,
       );
     }
+
+    updateProductDto.p_id = id;
     const updateProductEntity = plainToInstance(Product, updateProductDto); // plainToInstance() 사용된 부분.
-    updateProductEntity.p_id = id;
     return await this.prdRepo.save(updateProductEntity);
   }
 
