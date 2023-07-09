@@ -9,7 +9,7 @@
 
 #
 
-## 프로젝트 생성 & 불필요 파일 제거
+### 프로젝트 생성 & 불필요 파일 제거
 
 ```
 root@8aece4bfc5fa:/home# nest new
@@ -33,7 +33,7 @@ root@8aece4bfc5fa:/home# nest new
 export class AppModule {}
 ```
 
-## 패키지 설치
+### 패키지 설치
 
 - typeorm 패키지 설치
 
@@ -49,7 +49,7 @@ yarn add @nestjs/config
 npm install @nestjs/config
 ```
 
-## .env
+### .env
 
 - 이 파일을 프로젝트 root 에 위치시키도록 한다.
 - 정보는 아래를 참고하고 자신에게 맞는 정보로 수정.
@@ -62,7 +62,7 @@ MYSQL_PASSWORD=1234
 MYSQL_DATABASE=tutorial
 ```
 
-## AppModule 에 ConfigModule 추가
+### AppModule 에 ConfigModule 추가
 
 - 아래 예시처럼 설정하면 .env 파일에 추가한 값들을 ConfigService를 통해 애플리케이션 전체에서 사용할 수 있게 된다.
 - 이 tutorial은 typeorm 관련내용이기 때문에 자세히 다루지 않겠다.
