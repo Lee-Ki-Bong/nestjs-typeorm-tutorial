@@ -844,7 +844,7 @@ return product;
 
 ## entityManager 를 이용한 transaction 처리
 
-- Repository는 관계가 형성된 엔티티들을 처리. 그 보다 범위가 큰 작업이 필요할 경우 사용.
+- 여러 Repository를 포함하는 범위가 큰 트랜잭션을 처리
 - typeorm의 entityManager를 이용한 방법.
 - 여러 트랜젝션처리 방법이 있지만, 이 방법이 제일 깔끔한것같아 제시.
 
