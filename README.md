@@ -852,7 +852,6 @@ return product;
 - 여러 트랜젝션처리 방법이 있지만, 이 방법이 제일 깔끔한것같아 제시.
 
 ```javascript
-// src/product/product.service.ts
   async update(id: number, updateProductDto: UpdateProductDto) {
     const res = await this.entityManager.transaction(async (entityManager) => {
       // entityManager.withRepository()로 각 Repository를 선언, 이를 통해 각각 수행하는 쿼리들은 하나의 트랜젝션키로 묶이게된다.
