@@ -825,6 +825,22 @@ query: COMMIT
 - 이들은 단순히 주어진 데이터를 데이터베이스에 삽입, 변경하는 용도로 사용된다.
 - 만약 사용하면서 관계를 처리하고 싶다면, 관계를 수동으로 처리해야 한다.
 
+## Repository 를 활용한 관계데이터 조회
+
+- 관계 맴버들은 엔티티에 선언된 이름이다.
+
+```javascript
+const product = await this.prdRepo.findOne({
+  where: { p_id: id },
+  relations: {
+    p_product_detail: true,
+    p_product_options: true, // 조인여부.
+    p_product_tags: true,
+  },
+});
+return product;
+```
+
 ## entityManager 를 이용한 transaction 처리
 
 - Repository는 관계가 형성된 엔티티들을 처리. 그 보다 범위가 큰 작업이 필요할 경우 사용.

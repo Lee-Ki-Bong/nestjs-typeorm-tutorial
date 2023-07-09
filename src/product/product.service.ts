@@ -13,7 +13,8 @@ export class ProductService {
   ) {}
 
   async create(createProductDto: CreateProductDto) {
-    return await this.prdRepo.save(createProductDto);
+    const productEntity = plainToInstance(Product, createProductDto);
+    return await this.prdRepo.save(productEntity);
   }
 
   async findAll() {
@@ -21,7 +22,15 @@ export class ProductService {
   }
 
   async findOne(id: number) {
-    return await this.prdRepo.findOneBy({ p_id: id });
+    const product = await this.prdRepo.findOne({
+      where: { p_id: id },
+      relations: {
+        p_product_detail: true,
+        p_product_options: true,
+        p_product_tags: true,
+      },
+    });
+    return product;
   }
 
   async update(id: number, updateProductDto: UpdateProductDto) {
