@@ -953,12 +953,12 @@ npm notice
 export class UpdateProductPrice1688885822966 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     Logger.log('상품 가격 모두 10000원 으로');
-    await queryRunner.query('UPDATE product set p_price = 10000;');
+    await queryRunner.query('UPDATE product_tb set p_price = 10000;');
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     Logger.log('상품 가격 모두 0원 으로');
-    await queryRunner.query('UPDATE product set p_price = 0;');
+    await queryRunner.query('UPDATE product_tb set p_price = 0;');
   }
 }
 
@@ -996,7 +996,7 @@ query: SELECT * FROM `test`.`migrations` `migrations` ORDER BY `id` DESC
 1 migrations are new migrations must be executed.
 query: START TRANSACTION
 [Nest] 2923  - 06/27/2023, 9:28:41 AM     LOG 상품 가격 모두 10000원 으로
-query: UPDATE product set p_price = 10000;
+query: UPDATE product_tb set p_price = 10000;
 query: INSERT INTO `test`.`migrations`(`timestamp`, `name`) VALUES (?, ?) -- PARAMETERS: [1688885822966,"UpdateProductPrice1688885822966"]
 Migration UpdateProductPrice1688885822966 has been  executed successfully.
 query: COMMIT
@@ -1022,7 +1022,7 @@ UpdateProductPrice1688885822966 is the last executed migration. It was executed 
 Now reverting it...
 query: START TRANSACTION
 [Nest] 2958  - 06/27/2023, 9:29:33 AM     LOG 상품 가격 모두 0원 으로
-query: UPDATE product set p_price = 0;
+query: UPDATE product_tb set p_price = 0;
 query: DELETE FROM `test`.`migrations` WHERE `timestamp` = ? AND `name` = ? -- PARAMETERS: [1688885822966,"UpdateProductPrice1688885822966"]
 Migration UpdateProductPrice1688885822966 has been  reverted successfully.
 query: COMMIT
