@@ -145,7 +145,9 @@ export class AppModule {}
 
 - 이제 실제 제공할 모듈을 작성해보자.
 - 상품을 예시로 들었다.
-
+- 자세한 내용은 공식문서나 'nest' 를 터미널에 치게되면 설명을 볼 수 있다.
+- 아래의 제너레이터 명령어를 실행.
+  
 ```shell
 nest g res product --no-spec
 ? What transport layer do you use? REST API
