@@ -390,7 +390,7 @@ this.dataSource
 
 #
 
-## TypeOrm Repository를 이용한 관계 데이터 생성
+## Repository를 이용한 관계 데이터 생성
 
 - Orm 은 Object Relational Mapping 의 줄임말로서 객체와 관계형 데이터베이스를 자동으로 매핑시켜주는 것을 말한다.
 - 이제부터 강력한 TypeOrm 의 관계 매핑기능을 활용한 insert 예시를 들어보겠다.
@@ -531,7 +531,7 @@ export class CreateProductDto {
 }
 ```
 
-### 관계 데이터 요청 & 생성
+### 실제 요청 & 생성 해보기
 
 - 아래의 데이터 구조가 DTO 를 통해 들어오게 되면.
 
@@ -564,14 +564,12 @@ export class CreateProductDto {
 }
 ```
 
-- 이 코드를 실행하는 것 만으로
-
 ```javascript
   create(createProductDto: CreateProductDto) {
     return this.prdRepo.save(createProductDto);
   }
 ```
-
+- 이 코드 만으로
 - 관계된 모든 테이블들의 시퀀스 매핑이 자동으로 이루어 지면서 insert 되는 것을 볼 수 있다.
 - 물론 이 과정에서 트랜젝션 처리가 이루어지며, 중간에 다른 테이블 sql 이 실패되면 이전 sql 이 롤백된다.
 - 자세한 sql 처리 과정은 typeorm 옵션 logging: true 로 확인 해보길 바란다.
@@ -625,7 +623,8 @@ export class CreateProductDto {
 
 - cascade 옵션은 배열 형태로도 지정가능. 예를 들어 cascade: ["insert", "update"]
 
-#### cascade 옵션을 사용하지 않았을 경우, 트랜잭션 처리와 함께 관계엔티티 매핑작업이 이루어져야함.
+#### cascade 옵션을 사용하지 않았을 경우
+- 트랜잭션 처리와 함께 관계엔티티 매핑작업이 이루어져야함.
 
 ```javascript
   async create(createDto: CreateProductDto) {
@@ -660,7 +659,7 @@ export class CreateProductDto {
 
 #
 
-## Typeorm 메서드에 Entity를 넘기는 것이 권장사항이다.
+## Repository save() 에 Entity를 넘기는 것이 권장사항이다.
 
 - 지금 예시에서는 DTO 객체를 save() 매개변수에 넘기고 있다. 제대로 동작이 이루어지는 이유는 DTO 객체와 엔티티의 구조가 동일하기 때문이다. 즉, DTO객체가 그대로 사용되고 TypeORM은 해당 DTO 객체를 데이터베이스에 저장하고 있는 것이다.
 
@@ -718,7 +717,7 @@ export declare function plainToInstance<T, V>(cls: ClassConstructor<T>, plain: V
 - 공식 패키지 함수를 사용함 으로서 실수가 빈번하게 일어날 수 있는 구간을 대신함.
 - 자연스레 데이터 변환이 이루어지는 지점임이 명시되면서 코드의 가독성을 높임.
 
-## plainToInstance() 를 이용한 update 구현
+## Repository 를 활용한 update 구현
 
 ### Update Dto 정의
 
@@ -765,7 +764,7 @@ export class UpdateProductTagDto extends PartialType(CreateProductTagDto) {
         HttpStatus.BAD_REQUEST,
       );
     }
-    const updateProductEntity = plainToInstance(Product, updateProductDto); // 사용된 부분.
+    const updateProductEntity = plainToInstance(Product, updateProductDto); // plainToInstance() 사용된 부분.
     updateProductEntity.p_id = id;
     return await this.prdRepo.save(updateProductEntity);
   }
@@ -821,7 +820,7 @@ query: INSERT INTO `product_option_tb`(`po_id`, `po_name`, `po_value`, `poProduc
 query: COMMIT
 ```
 
-## TypeORM의 insert(), update()
+## Repository 의 insert(), update()
 
 - 이 메서드들은 관계 매핑을 지원하지않는다.
 - 이들은 단순히 주어진 데이터를 데이터베이스에 삽입, 변경하는 용도로 사용된다.
