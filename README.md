@@ -275,10 +275,10 @@ mysql> show tables;
 
 ## Typeorm의 DB 상호작용 방식 3가지
 
-- 크게 3가지 방식이 있다. 각 방식의 차이점을 한마디로 이야기 하자면 '추상화 수준' 이다.
+- 3가지 방식이 있다. 각 방식의 차이점을 한마디로 이야기 하자면 '추상화 수준' 이다.
   - Repository
   - QueryBuilder
-  - queryRunner
+  - QueryRunner
 - 자세한 내용은 공식 docs 를 참고하길 바란다. [Typeorm Docs](https://typeorm.io/)
 
 ### Repository 활용
