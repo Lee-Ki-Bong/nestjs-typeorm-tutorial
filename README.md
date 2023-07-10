@@ -147,7 +147,7 @@ export class AppModule {}
 - 상품을 예시로 들었다.
 - 자세한 내용은 공식문서나 'nest' 를 터미널에 치게되면 설명을 볼 수 있다.
 - 아래의 제너레이터 명령어를 실행.
-  
+
 ```shell
 nest g res product --no-spec
 ? What transport layer do you use? REST API
@@ -571,6 +571,7 @@ export class CreateProductDto {
     return this.prdRepo.save(createProductDto);
   }
 ```
+
 - 이 코드 만으로
 - 관계된 모든 테이블들의 시퀀스 매핑이 자동으로 이루어 지면서 insert 되는 것을 볼 수 있다.
 - 물론 이 과정에서 트랜젝션 처리가 이루어지며, 중간에 다른 테이블 sql 이 실패되면 이전 sql 이 롤백된다.
@@ -626,6 +627,7 @@ export class CreateProductDto {
 - cascade 옵션은 배열 형태로도 지정가능. 예를 들어 cascade: ["insert", "update"]
 
 #### cascade 옵션을 사용하지 않았을 경우
+
 - 트랜잭션 처리와 함께 관계엔티티 매핑작업이 이루어져야함.
 
 ```javascript
@@ -897,7 +899,9 @@ export class ProductRepository extends Repository<Product> {
 ```
 
 ## migration
+
 - 모든 상품 가격을 조작하는 마이그레이션
+
 ### 필요 패키지 설치
 
 - 명령어로 마이그래이션을 실행할때, 외부에서 .env 로드하기 위한 패키지 설치
