@@ -376,7 +376,7 @@ this.dataSource
 
 ### queryRunner 활용
 
-- 대부분은 repository 와 createQueryBuilder 로 커버가 가능하지만, 이 수준을 넘어서는 sql 작업이 필요할때 사용. (프로시저 호출 등.)
+- 대부분은 repository 와 queryBuilder 로 커버가 가능하지만, 이 수준을 넘어서는 sql 작업이 필요할때 사용. (프로시저 호출 등.)
 
 ```javascript
 this.dataSource
