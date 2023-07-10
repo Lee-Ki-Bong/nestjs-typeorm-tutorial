@@ -537,8 +537,9 @@ export class CreateProductDto {
 
 - 아래의 데이터 구조가 DTO 를 통해 들어오게 되면.
 
+#### 요청
+
 ```json
-// 요청
 {
   "p_name": "인상적인 주전자",
   "p_price": 10000,
@@ -577,38 +578,39 @@ export class CreateProductDto {
 - 물론 이 과정에서 트랜젝션 처리가 이루어지며, 중간에 다른 테이블 sql 이 실패되면 이전 sql 이 롤백된다.
 - 자세한 sql 처리 과정은 typeorm 옵션 logging: true 로 확인 해보길 바란다.
 
-```javascript
-// 결과
+#### 결과
+
+```json
 {
-	"p_name": "인상적인 주전자",
-	"p_price": 10000,
-	"p_product_detail": {
-		"pd_description": "멋진 주전자",
-		"pd_id": 1
-	},
-	"p_product_options": [
-		{
-			"po_name": "인상적인 주전자 옵션1",
-			"po_value": "인상적인 주전자 옵션값1",
-			"po_id": 1
-		},
-		{
-			"po_name": "인상적인 주전자 옵션2",
-			"po_value": "인상적인 주전자 옵션값2",
-			"po_id": 2
-		}
-	],
-	"p_product_tags": [
-		{
-			"pt_name": "주방용품",
-			"pt_id": 1
-		},
-		{
-			"pt_name": "주전자",
-			"pt_id": 2
-		}
-	],
-	"p_id": 1
+  "p_name": "인상적인 주전자",
+  "p_price": 10000,
+  "p_product_detail": {
+    "pd_description": "멋진 주전자",
+    "pd_id": 1
+  },
+  "p_product_options": [
+    {
+      "po_name": "인상적인 주전자 옵션1",
+      "po_value": "인상적인 주전자 옵션값1",
+      "po_id": 1
+    },
+    {
+      "po_name": "인상적인 주전자 옵션2",
+      "po_value": "인상적인 주전자 옵션값2",
+      "po_id": 2
+    }
+  ],
+  "p_product_tags": [
+    {
+      "pt_name": "주방용품",
+      "pt_id": 1
+    },
+    {
+      "pt_name": "주전자",
+      "pt_id": 2
+    }
+  ],
+  "p_id": 1
 }
 ```
 
