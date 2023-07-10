@@ -781,43 +781,43 @@ export class UpdateProductTagDto extends PartialType(CreateProductTagDto) {
 - 자동 변경 감지: TypeORM은 변경된 속성만을 업데이트하여 성능을 개선하고 중복 작업을 방지한다.
 - localhost:3000/product/1 PATCH 요청
 
-```
-  {
-    "p_name": '인상적인 주전자',
-    "p_price": 10000,
-    "p_product_detail": {
-      "pd_description": '멋진 주전자 설명', // 멋진 주전자 -> 멋진 주전자 설명
-      "pd_id": 1,
+```json
+{
+  "p_name": "인상적인 주전자",
+  "p_price": 10000,
+  "p_product_detail": {
+    "pd_description": "멋진 주전자 설명", // 멋진 주전자 -> 멋진 주전자 설명
+    "pd_id": 1
+  },
+  "p_product_options": [
+    {
+      "po_name": "인상적인 주전자 옵션1",
+      "po_value": "인상적인 주전자 옵션값1",
+      "po_id": 1
     },
-    "p_product_options": [
-      {
-        "po_name": '인상적인 주전자 옵션1',
-        "po_value": '인상적인 주전자 옵션값1',
-        "po_id": 1,
-      },
-      {
-        "po_name": '인상적인 주전자 옵션2',
-        "po_value": '인상적인 주전자 옵션값2',
-        "po_id": 2,
-      },
+    {
+      "po_name": "인상적인 주전자 옵션2",
+      "po_value": "인상적인 주전자 옵션값2",
+      "po_id": 2
+    },
 
-      // 새 옵션을 추가 (시퀀스 없음)
-      {
-        "po_name": '인상적인 주전자 옵션3',
-        "po_value": '인상적인 주전자 옵션값3',
-      },
-    ],
-    "p_product_tags": [
-      {
-        "pt_name": '주방용품',
-        "pt_id": 1,
-      },
-      {
-        "pt_name": '주전자',
-        "pt_id": 2,
-      },
-    ],
-  }
+    // 새 옵션을 추가 (시퀀스 없음)
+    {
+      "po_name": "인상적인 주전자 옵션3",
+      "po_value": "인상적인 주전자 옵션값3"
+    }
+  ],
+  "p_product_tags": [
+    {
+      "pt_name": "주방용품",
+      "pt_id": 1
+    },
+    {
+      "pt_name": "주전자",
+      "pt_id": 2
+    }
+  ]
+}
 ```
 
 - 변경된 사항만 찾아 update 되는 것을 볼 수 있다.
