@@ -907,7 +907,7 @@ export class ProductRepository extends Repository<Product> {
 
 ## migration
 
-- 모든 상품 가격을 조작하는 마이그레이션
+- 모든 상품 가격을 조작하는 마이그레이션을 예시로 들어보겠다.
 
 ### 필요 패키지 설치
 
