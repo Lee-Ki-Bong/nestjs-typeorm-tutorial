@@ -727,6 +727,9 @@ export declare function plainToInstance<T, V>(cls: ClassConstructor<T>, plain: V
 
 ### Update Dto 정의
 
+- 아래의 예시는 typeorm 에 중점을 두기 위해 class-validate 데커레이터를 사용하지 않았다. 
+- 실제는 데커레이터를 통해 선택적으로 만드는 것이 권장된다. [참고](https://git.nm.koapp.com/npm-dev/backend/nestjs-validate-pipe-tutorial/-/blob/develop/README.md#dto-%EC%97%90-%EB%8D%B0%EC%BB%A4%EB%A0%88%EC%9D%B4%ED%84%B0-%EC%B6%94%EA%B0%80)
+
 - 주요 포인트
   - PartialType을 사용하여 각 DTO의 필드를 선택적으로 업데이트할 수 있도록 정의.
   - UpdateProductDto 를 제외한 테이블들의 시퀀스를 선택적으로 받음 으로서 save() 를 통해 시퀀스 유무로 insert, update 를 동작하도록 구성.
