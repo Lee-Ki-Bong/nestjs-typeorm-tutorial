@@ -183,7 +183,8 @@ export class Product {
   - 요청구조를 정의한 DTO
   - 응답구조를 정의한 DTO
 - 이 tutorial 에서는 요청구조를 정의해볼 것 이다.
-- 더 자세한 내용과 유효성 검사와 밀접한 관련이 있으나, 이 tutorial 에서는 다루지 않겠다.
+- DTO는 유효성 검사와 밀접한 관련이 있으나, 이 tutorial 에서는 다루지 않겠다.
+  - 관련된 내용은 [validate pipe tutorial](https://git.nm.koapp.com/npm-dev/backend/nestjs-validate-pipe-tutorial/-/blob/develop/README.md#%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90) 을 참고 하길 바란다.
 
 ```javascript
 export class CreateProductDto {
